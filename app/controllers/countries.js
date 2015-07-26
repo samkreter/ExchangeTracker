@@ -4,6 +4,8 @@ export default Ember.Controller.extend({
     filterText: '',
     EnableModal: false,
     articalTitles: null,
+    articalDate: null,
+
     filteredResults: function() {
         var filter = this.get('filterText');
         return this.get('model').filter(function(item) {
@@ -15,6 +17,10 @@ export default Ember.Controller.extend({
       this.send('toggleModal');
       return this.get("articalTitles");
     }.property('articalTitles'),
+
+    getDate: function(){
+      return "News from "+this.get('articalDate');
+    }.property('articalDate'),
 
     actions: {
         toggleModal: function() {
@@ -30,6 +36,7 @@ export default Ember.Controller.extend({
               titles.push(result.webTitle);
             });
             self.set("articalTitles",titles);
+            self.set("articalDate",date);
           });
         }
    }

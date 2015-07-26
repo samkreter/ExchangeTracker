@@ -5,7 +5,7 @@
     {{/each}}
 </ul>
 
-{{#bootstrap-modal title="News" EnableModal=EnableModal}}
+{{#bootstrap-modal title=getDate EnableModal=EnableModal}}
     <ul class="title-list">
     {{#each title in getNewsHeadlines}}
         <li><strong>{{title}}</strong></li>
