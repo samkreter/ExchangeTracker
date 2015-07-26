@@ -7,6 +7,6 @@ configure do
   set :database, {adapter: "sqlite3", database: "news.sqlite3"}
 end
 
-get '/' do
+get '*' do
   send_file 'dist/index.html'
 end
