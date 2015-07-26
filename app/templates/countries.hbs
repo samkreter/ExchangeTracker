@@ -5,5 +5,12 @@
     {{/each}}
 </ul>
 
+{{#bootstrap-modal title="News" EnableModal=EnableModal}}
+    <ul class="title-list">
+    {{#each title in getNewsHeadlines}}
+        <li><strong>{{title}}</strong></li>
+    {{/each}}
+    </ul>
+{{/bootstrap-modal}}
 
 {{outlet}}
