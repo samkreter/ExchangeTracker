@@ -2,9 +2,12 @@ require 'sinatra'
 
 require 'sinatra/activerecord'
 
+require_relative 'lib/models/country'
+require_relative 'lib/models/day'
+
 configure do
   set :public_folder, File.expand_path('dist')
-  set :database, {adapter: "sqlite3", database: "news.sqlite3"}
+  set :database, {adapter: "sqlite3", database: "exchangeTracker.sqlite3"}
 end
 
 get '*' do
