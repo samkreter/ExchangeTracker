@@ -28,11 +28,7 @@ namespace :data do
     data = JSON.parse(response.body)
 
     data['rates'].each do |country_code, rate|
-        c = Day.new
-        c.country_code = country_code
-        c.rate = rate
-        c.date = args[:date]
-        c.save
+        Day.create(country_code: country_code, rate: rate, date: args[:date])
     end
 
 

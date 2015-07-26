@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'pry'
 
 require 'sinatra/activerecord'
 
@@ -13,7 +12,7 @@ end
 
 get '/api/countries' do
   content_type :json
-  binding.pry
+  {countries: Country.all}.to_json
 end
 
 get '*' do
