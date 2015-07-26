@@ -3,6 +3,8 @@ h1 {
 }
 
 .country-list {
+  height: 240px;
+  overflow: scroll;
   width: 400px;
   float: left;
   margin-bottom: 2em;

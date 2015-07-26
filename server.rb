@@ -15,6 +15,11 @@ get '/api/countries' do
   {countries: Country.all}.to_json
 end
 
+get '/api/days' do
+    content_type :json
+    {days: Day.where(country_code: params[:country_code])}.to_json
+end
+
 get '*' do
   send_file 'dist/index.html'
 end
