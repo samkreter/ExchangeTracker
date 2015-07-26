@@ -9,12 +9,7 @@ namespace :data do
     names = JSON.parse(file2)
     dataCurr['rates'].each do |country_code, rate|
         time = Time.new
-        c = Country.new
-        c.country_code = country_code
-        c.rate = rate
-        c.date = time.strftime("%Y-%m-%d")
-        c.name = names[country_code]
-        c.save
+        Country.create(country_code: country_code,rate: rate, date:time.strftime("%Y-%m-%d"),name: names[country_code])
     end
   end
 
