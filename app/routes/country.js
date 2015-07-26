@@ -6,6 +6,13 @@ export default Ember.Route.extend({
     },
     afterModel: function(model) {
         var _this = this;
+        var arrayUnique = function(a) {
+            return a.reduce(function(p, c) {
+                if (p.indexOf(c) < 0) p.push(c);
+                return p;
+            }, []);
+        };
+
         return this.store.find('day', {country_code: model.get('country_code')}).then(function(data){
             var labels = [];
             var dataForChart = [];
@@ -16,8 +23,8 @@ export default Ember.Route.extend({
                 count += 1;
                 if (count > 4){return true;}
             });
-            _this.set("labels",labels);
-            _this.set("dataForChart",dataForChart);
+            _this.set("labels", arrayUnique(labels));
+            _this.set("dataForChart", arrayUnique(dataForChart));
         });
     },
     setupController: function(controller,model){
