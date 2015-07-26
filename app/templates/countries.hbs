@@ -1,5 +1,9 @@
 <ul class="country-list">
     {{#each country in model}}
-        <li>{{country.name}}</li>
+        <li>{{link-to country.name 'country' country}}</li>
     {{/each}}
 </ul>
+
+<div>
+    {{outlet}}
+</div>

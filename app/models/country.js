@@ -13,7 +13,7 @@ Country.reopenClass({
         {
             id: 1,
             name: "China",
-            rate: 6.000,
+            rate: 6.0023,
             country_code: "CNY",
             date: "07-25-15"
         },
