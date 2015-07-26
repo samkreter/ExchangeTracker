@@ -11,9 +11,9 @@ export default Ember.Controller.extend({
             datasets: [
                 {
                     label: this.get("model").get("name"),
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
+                    fillColor: "rgba(248, 108, 85, 0.5)",
+                    strokeColor: "rgb(248,108,85)",
+                    pointColor: "#F3490E",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
