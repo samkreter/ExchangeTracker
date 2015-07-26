@@ -1,12 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    company: Ember.computed.alias("controllers.company"),
+
+    countryNames: function(){
+        var labels = [];
+        this.get('model').forEach(function(country) {
+             labels.push(country.get('name'));
+        });
+        debugger;
+    }.property('model'),
+
     chartData: function(){
         return {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: this.get("countryNames"),
             datasets: [
                 {
-                    label: "My First dataset",
+                    label: this.get("company").get("name"),
                     fillColor: "rgba(220,220,220,0.2)",
                     strokeColor: "rgba(220,220,220,1)",
                     pointColor: "rgba(220,220,220,1)",
@@ -27,5 +37,5 @@ export default Ember.Controller.extend({
                 }
             ]
         };
-    }.property()
+    }.property('company')
 });
