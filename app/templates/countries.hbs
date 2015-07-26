@@ -4,6 +4,9 @@
     {{/each}}
 </ul>
 
-<div>
-    {{outlet}}
+<div class="chart-stuff">
+    {{ember-chart type='Line' data=chartData width=300 height=300}}
 </div>
+
+
+{{outlet}}
